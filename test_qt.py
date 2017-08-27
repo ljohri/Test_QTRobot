@@ -14,7 +14,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), '../..'))
 
 from uf.wrapper.swift_api import SwiftAPI
 from uf.utils.log import *
-import XYZSlider  
+import xyzslider 
 
 #logger_init(logging.VERBOSE)
 #logger_init(logging.INFO)
@@ -29,13 +29,13 @@ print('setup swift ...')
 
 #swift = SwiftAPI(dev_port = '/dev/ttyACM0')
 #swift = SwiftAPI(filters = {'hwid': 'USB VID:PID=2341:0042'})
-swift = SwiftAPI(dev_port = 'COM4') # default by filters: {'hwid': 'USB VID:PID=2341:0042'}
+#swift = SwiftAPI(dev_port = 'COM4') # default by filters: {'hwid': 'USB VID:PID=2341:0042'}
 
 
 print('setup QT')
-a = QApplication(sys.argv)
-ex = Example()
-sys.exit(a.exec_())
+
+ex = xyzslider.XYZSlider()
+ex.show_ux()
 
 print('sleep 2 sec ...')
 sleep(2)
